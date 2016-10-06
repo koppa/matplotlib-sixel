@@ -15,12 +15,11 @@ TODO proper license
 # Distributed under the terms of the Modified BSD License.
 
 import matplotlib
-import numpy as np
 
 from matplotlib._pylab_helpers import Gcf
 from subprocess import Popen, PIPE
 
-from xterm import xterm_pixels
+from .xterm import xterm_pixels
 
 from matplotlib.backends.backend_agg import new_figure_manager, FigureCanvasAgg
 new_figure_manager  # for check

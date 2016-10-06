@@ -2,13 +2,9 @@
 
 import matplotlib
 
-matplotlib.use('module://sixel')
+matplotlib.use('module://matplotlib-sixel')
 
 from pylab import *
-
-
-
-
 
 plot([1, 2, 3])
 show()

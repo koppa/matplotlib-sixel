@@ -6,9 +6,15 @@ A matplotlib backend which outputs sixel graphics onto the terminal
 
 TODO:
 
+* Proper license (code is based on matplotlib stuff)
 * finish readme (links etc)
 * cleanup code
 * proper install file
+* Check for xterm at start.
+  Currently only shows a exception because of curses (in some cases).
+  Also check terminal mode, whether sixel support is there
+* Resize has still some problems.
+  The figures are often too big for small windows
 
 Dependencies
 ------------
