@@ -11,6 +11,11 @@ class raw_terminal(object):
 
     def __enter__(self):
         curses.initscr()
+
+        if curses.termname() != 'xterm':
+            raise Exception("This backend only supports " +
+                            "xterm as terminal emulator.")
+
         curses.cbreak()
 
     def __exit__(self, type, value, traceback):
@@ -27,6 +32,7 @@ def read_until(fd, delim):
 
 
 def xterm_pixels():
+    """ Get the width and heigth in pixels of the xterm window """
     code = "\x1b\x5b\x31\x34\x74\x0a"
 
     with raw_terminal(stdin):
@@ -43,6 +49,6 @@ def xterm_pixels():
 
 
 if __name__ == '__main__':
-    print("Height and width of the xterm terminal:")
+    print("Width and height of the xterm terminal:")
     print(xterm_pixels())
     print(".")
