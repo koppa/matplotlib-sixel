@@ -3,16 +3,13 @@
 """
 A matplotlib backend for displaying figures via sixel terminal graphics
 
-
 Based on the ipykernel source  code "backend_inline.py"
-
-TODO proper license
-
-"""
-
 
 # Copyright (c) IPython Development Team.
 # Distributed under the terms of the Modified BSD License.
+
+"""
+
 
 import matplotlib
 
@@ -33,7 +30,7 @@ def resize_fig(figure):
 
     """
     dpi = figure.get_dpi()
-    size = figure.get_size_inches() # w, h
+    size = figure.get_size_inches()  # w, h
     pixel_size = size * dpi
 
     pixel_factor = pixel_size / xterm_pixels()
@@ -45,6 +42,7 @@ def resize_fig(figure):
     figure.set_size_inches(size)
     print(size)
 
+
 def display(figure):
     """ Display figure on stdout as sixel graphic """
 
@@ -54,7 +52,6 @@ def display(figure):
     figure.savefig(p.stdin, format='png')
     p.stdin.close()
     p.wait()
-
 
 
 def show(close=False, block=None):

@@ -6,7 +6,6 @@ A matplotlib backend which outputs sixel graphics onto the terminal
 
 TODO:
 
-* Proper license (code is based on matplotlib stuff)
 * finish readme (links etc)
 * cleanup code
 * proper install file
