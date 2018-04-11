@@ -7,6 +7,7 @@ The code is inspired by the ipython-notebook matplotlib backend.
 
 TODO:
 
+* An Exception breaks the terminal
 * Support other terminals than xterm
 * Resize has still some problems.
   The figures are often too big for small windows
@@ -26,8 +27,9 @@ Usage
 -----
 
 
-    from pylab import *
+    import matplotlib
     matplotlib.use('module://matplotlib-sixel')
+    from pylab import *
     plt.plot(sin(arange(100) / 10))
     show()
 

@@ -12,9 +12,8 @@ class raw_terminal(object):
     def __enter__(self):
         curses.initscr()
 
-        if curses.termname() != 'xterm':
-            raise Exception("This backend only supports " +
-                            "xterm as terminal emulator.")
+        if curses.termname() != b'xterm':
+            raise Exception(f"This backend only supports xterm as terminal emulator. Got: '{curses.termname()}'.")
 
         curses.cbreak()
 
