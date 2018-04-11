@@ -46,9 +46,3 @@ def xterm_pixels():
         width = read_until(stdin, 't')
 
     return (int(width), int(height))
-
-
-if __name__ == '__main__':
-    print("Width and height of the xterm terminal:")
-    print(xterm_pixels())
-    print(".")
