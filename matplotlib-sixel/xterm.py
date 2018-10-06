@@ -12,7 +12,7 @@ class raw_terminal(object):
     def __enter__(self):
         curses.initscr()
 
-        if curses.termname() != b'xterm':
+        if not curses.termname().startswith(b'xterm'):
             raise Exception(f"This backend only supports xterm as terminal emulator. Got: '{curses.termname()}'.")
 
         curses.cbreak()
